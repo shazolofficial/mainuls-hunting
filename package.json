@@ -1,0 +1,35 @@
+{
+  "name": "mainuls-hunting",
+  "version": "1.0.0",
+  "description": "Mainul's Hunting — AI-powered Client Hunting System for Photo Editors",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build:win": "electron-builder --win --x64"
+  },
+  "build": {
+    "appId": "com.mainul.hunting",
+    "productName": "Mainuls Hunting",
+    "copyright": "Developed by Mainul Islam",
+    "directories": { "output": "dist" },
+    "win": {
+      "target": [
+        { "target": "nsis", "arch": ["x64"] },
+        { "target": "portable", "arch": ["x64"] }
+      ],
+      "icon": "icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Mainuls Hunting"
+    },
+    "files": ["index.html", "main.js", "icon.png", "package.json"]
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.0.0"
+  }
+}
